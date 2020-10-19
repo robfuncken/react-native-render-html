@@ -77,14 +77,14 @@ export default class HTMLImage extends PureComponent {
 
     getImageSize (props = this.props) {
         const { source, imagesMaxWidth, style, height, width } = props;
-        const { styleWidth, styleHeight } = this.getDimensionsFromStyle(style, height, width);
+       // const { styleWidth, styleHeight } = this.getDimensionsFromStyle(style, height, width);
 
-        if (styleWidth && styleHeight) {
-            return this.mounted && this.setState({
-                width: typeof styleWidth === 'string' && styleWidth.search('%') !== -1 ? styleWidth : parseInt(styleWidth, 10),
-                height: typeof styleHeight === 'string' && styleHeight.search('%') !== -1 ? styleHeight : parseInt(styleHeight, 10)
-            });
-        }
+        // if (styleWidth && styleHeight) {
+        //     return this.mounted && this.setState({
+        //         width: typeof styleWidth === 'string' && styleWidth.search('%') !== -1 ? styleWidth : parseInt(styleWidth, 10),
+        //         height: typeof styleHeight === 'string' && styleHeight.search('%') !== -1 ? styleHeight : parseInt(styleHeight, 10)
+        //     });
+        // }
         // Fetch image dimensions only if they aren't supplied or if with or height is missing
         Image.getSize(
             source.uri,
